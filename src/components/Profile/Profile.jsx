@@ -2,11 +2,11 @@ import MyPosts from './MyPosts/MyPosts'
 import s from './Profile.module.css'
 import User from './User/User'
 
-const Profile = () => {
+const Profile = (props) => {
   return (
     <div>
       <User />
-      <MyPosts />
+      <MyPosts pcnt={props.pcnt} />
     </div>
   )
 }

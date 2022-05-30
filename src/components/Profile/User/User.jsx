@@ -6,7 +6,7 @@ const User = () => {
       <div className={s.banner}>
         <img src='https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg' />
       </div>
-      <div>
+      <div className={s.descriptionBlock}>
         av+desc
       </div>
     </div>

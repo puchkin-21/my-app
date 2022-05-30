@@ -5,7 +5,7 @@ import Messages from './components/Messages/Messages';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
@@ -13,8 +13,8 @@ const App = () => {
         <Navbar />
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/messages" element={<Messages />} />
+            <Route path="/profile" element={<Profile pcnt={props.pc} />} />
+            <Route path="/messages/*" element={<Messages msg={props.mt} usrs={props.dd} />} />
           </Routes>
         </div>
       </div>

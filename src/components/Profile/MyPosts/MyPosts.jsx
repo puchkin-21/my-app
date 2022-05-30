@@ -1,17 +1,25 @@
 import s from './MyPosts.module.css'
 import Post from './Post/Post';
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+
+
+
+let postsElements = props.pcnt.map (p => <Post message={p.text} likesCount={p.likesCount} />)
+
   return (
-    <div className={s.c}>
-      My posts
+    <div className={s.postsBlock}>
+      <h3>My posts</h3>
       <div>
-        <textarea></textarea>
-        <button>Add post</button>
+        <div>
+          <textarea></textarea>
+        </div>
+        <div>
+          <button>Add post</button>
+        </div>
       </div>
       <div className={s.posts}>
-        <Post message='Hello, world' likesCount='24'/>
-        <Post message='It my first post here' likesCount='21' />
+        {postsElements}
       </div>
     </div>
   );
